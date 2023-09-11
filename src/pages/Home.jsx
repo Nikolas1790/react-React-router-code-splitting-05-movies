@@ -1,12 +1,12 @@
 
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 
  const Home = () => {
 
   // useEffect(() =>{
   //   HTTP запрос
   // },[])
-  
+
   return (
     <div>        
         Home     
