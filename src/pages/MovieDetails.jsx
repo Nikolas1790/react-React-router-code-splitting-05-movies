@@ -1,17 +1,50 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
  const MovieDetails = () => {
-  // const params = useParams()
-  const {movieId} = useParams()
- 
-  console.log(movieId)
+  const {movieId} = useParams()   
+  // console.log(movieId)
 
+  const [query, setQuery] = useState(null)
+  
+  useEffect(() =>{
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
+    .then(response => {
+      setQuery(response.data)
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+    });
+
+  },[movieId])
   return (
     <div>
-      MovieDetails
+            
+            {query && (
+            <div>
+               {query.poster_path && (
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${query.poster_path}`}
+                      alt={query.title}
+                      width={250}
+                    />
+                 )}
+                  <h2> {query.title}</h2>
+                  <p>Use Score: {Math.round(query.vote_average * 10)}%</p>
+                  <h3>Overview</h3>
+                  <p> {query.overview}</p>
+                  <h3>Genres</h3>
+                <p>{query.genres.map(genre => genre.name).join(', ')}</p>
+                 
+              </div>
+      )}
+     
+
+
       
       <h2>Additional information</h2>
       <ul>
@@ -30,3 +63,12 @@ import { Outlet } from 'react-router-dom'
 }
 
 export default MovieDetails
+{/* <h3>Title: {query.title}</h3>
+<p>Overview: {query.overview}</p>
+
+{query.poster_path && (
+  <img
+    src={`https://image.tmdb.org/t/p/w500${query.poster_path}`}
+    alt={query.title}
+  />
+)} */}
