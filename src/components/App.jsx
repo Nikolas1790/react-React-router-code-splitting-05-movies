@@ -9,11 +9,7 @@ import { Reviews } from "./Reviews/Reviews";
 
 export const App = () => {
   return (
-    <div>
-
-
-      
-      <Routes>
+         <Routes>
         <Route path="/" element={<Lauout/>}>
             <Route index element={<Home />} />
             <Route path="movies" element={<Movies />} />
@@ -24,9 +20,7 @@ export const App = () => {
             </Route>
             <Route path="*" element={<Home />} />
         </Route>
-      </Routes>   
-       
-    </div>
+      </Routes>       
   );
 };
 

@@ -1,27 +1,42 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useEffect, useState  } from 'react'
 import { useParams} from 'react-router-dom'
+import {requesReviews} from '../../services/API'
 
 export const Reviews = () => {
   const {movieId} = useParams()
 
   const [reviews, setReviews] = useState([])
 
-  useEffect(() =>{
-    axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page=1&api_key=537b9a5585a30e006c200a33f280f965`)
-    .then(response => {
-      setReviews(response.data.results)
-      console.log(response.data.results);
-    })
-    .catch(error => {
-      console.error('Ошибка:', error);
-    });
+  // useEffect(() =>{
+  //   // requesReviews(movieId)
+  //   axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page=1&api_key=537b9a5585a30e006c200a33f280f965`)
+  //   .then(response => {
+  //     setReviews(response.data.results)
+  //     console.log(response.data.results);
+  //   })
+  //   .catch(error => {
+  //     console.error('Ошибка:', error);
+  //   });
 
-  },[movieId])
+  // },[movieId])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await requesReviews(movieId);
+        setReviews(response.results);
+      
+      } catch (error) {
+        console.error('Ошибка:', error);
+      }
+    };
+  
+    fetchData();
+  }, [movieId]);
 
   return (
-    <div>
-     
+    <div>     
             {reviews.length > 0 ? (reviews.map(({author, content, id}) => {
      
               return <li key={id}>

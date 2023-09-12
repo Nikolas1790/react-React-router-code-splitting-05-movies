@@ -1,23 +1,39 @@
-import axios from 'axios'
+// import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import {requesCast} from '../../services/API'
 
 export const Cast = () => {
   const [cast, setCast] = useState(null)
 const {movieId} = useParams()
 
-useEffect(() =>{
-  axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
-  .then(response => {
-    setCast(response.data.cast)
-    console.log(response.data.cast);
-  })
-  .catch(error => {
-    console.error('Ошибка:', error);
-  });
+// useEffect(() =>{
+//   requesCast(movieId)
+//   // axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
+//   .then(response => {
+//     setCast(response.cast)
+//     console.log(response.cast);
+//   })
+//   .catch(error => {
+//     console.error('Ошибка:', error);
+//   });
 
-},[movieId])
+// },[movieId])
 
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await  requesCast(movieId);
+      setCast(response.cast)
+    
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
+  };
+
+  fetchData();
+}, [movieId]);
 
   return (
     <div>

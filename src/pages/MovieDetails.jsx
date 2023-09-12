@@ -1,8 +1,9 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
+import {requesMovieDetails} from '../services/API'
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
@@ -10,17 +11,33 @@ import { Outlet } from 'react-router-dom'
 
   const [query, setQuery] = useState(null)
   
-  useEffect(() =>{
-    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
-    .then(response => {
-      setQuery(response.data)
-      console.log(response.data);
-    })
-    .catch(error => {
-      console.error('Ошибка:', error);
-    });
+  // useEffect(() =>{
+  //   requesMovieDetails(movieId)
+  //   // axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
+  //   .then(response => {
+  //     setQuery(response)
+  //     console.log(response);
+  //   })
+  //   .catch(error => {
+  //     console.error('Ошибка:', error);
+  //   });
 
-  },[movieId])
+  // },[movieId])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await requesMovieDetails(movieId);
+        setQuery(response);
+      
+      } catch (error) {
+        console.error('Ошибка:', error);
+      }
+    };
+  
+    fetchData();
+  }, [movieId]);
+
   return (
     <div>
             
@@ -40,7 +57,7 @@ import { Outlet } from 'react-router-dom'
                   <h3>Genres</h3>
                 <p>{query.genres.map(genre => genre.name).join(', ')}</p>
                  
-              </div>
+      </div>
       )}
      
 
