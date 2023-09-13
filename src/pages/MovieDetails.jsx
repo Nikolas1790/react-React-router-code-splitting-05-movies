@@ -62,7 +62,7 @@ import {requesMovieDetails} from '../services/API'
                  
       </div>
       )}
-            
+
       <h2>Additional information</h2>
       <ul>
         <li>
@@ -80,12 +80,3 @@ import {requesMovieDetails} from '../services/API'
 }
 
 export default MovieDetails
-{/* <h3>Title: {query.title}</h3>
-<p>Overview: {query.overview}</p>
-
-{query.poster_path && (
-  <img
-    src={`https://image.tmdb.org/t/p/w500${query.poster_path}`}
-    alt={query.title}
-  />
-)} */}
