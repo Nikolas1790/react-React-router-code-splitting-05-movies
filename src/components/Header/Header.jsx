@@ -10,14 +10,10 @@ export const Header = () => {
     color: orange;
   }
 `;
-  return (
-    <div>
-           
+  return (              
       <nav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to='/movies'>Movies</StyledLink>     
-      </nav>
-   
-    </div>
+      </nav>   
   )
 }

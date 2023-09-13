@@ -5,9 +5,9 @@ import {requesCast} from '../../services/API'
 import { Loader } from 'components/Loader/Loader';
 
 
-export const Cast = () => {
-  const [cast, setCast] = useState(null)
-  const [loader, setLoader] = useState(false)
+const Cast = () => {
+const [cast, setCast] = useState(null)
+const [loader, setLoader] = useState(false)
 const {movieId} = useParams()
 
 
@@ -46,3 +46,5 @@ useEffect(() => {
       </div>
   )
 }
+
+export default Cast
