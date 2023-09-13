@@ -28,7 +28,10 @@ useEffect(() => {
   fetchData();
 }, [film]);
 
-
+const visible =query.filter(find => {
+  console.log(find.title)
+ return find.title.includes(film)})
+console.log(visible)
 
 
   const handleSubmit = (e) =>{
@@ -37,7 +40,7 @@ useEffect(() => {
     //    return toast.error("Please, enter your query in the search bar :)");
     // }
     const form = e.currentTarget;
-    console.log(form.elements.query.value)
+    console.log(form.elements.query.value )
     setSearchParams({film: form.elements.query.value });
     // console.log(form.elements)
     // setSearchParams('')
