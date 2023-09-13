@@ -25,19 +25,3 @@ export const App = () => {
 };
 
 
-{/* // style={{
-//   height: '100vh',
-//   display: 'flex',
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   fontSize: 40,
-//   color: '#010101'
-// }} */}
-
-{/* <Route path='/movies/:movieId' element={<MovieDetails />} />
-<Route path='/movies/:movieId' element={<MovieDetails />} /> */}
-
-
-{/* <Route path='movies/:movieId/cast' element={<Cast />} />
-<Route path='movies/:movieId/reviews' element={<Reviews />} />
-</Route> */}
