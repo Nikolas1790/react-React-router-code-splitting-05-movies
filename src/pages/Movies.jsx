@@ -42,7 +42,6 @@ useEffect(() => {
     // setSearchParams('')
 
 
-
     // form.reset();    
     // onSubmit(query);
     // setQuery('')
