@@ -1,31 +1,21 @@
-// import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link, useLocation } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import {requesMovieDetails} from '../services/API'
+import { Loader } from 'components/Loader/Loader';
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
-  // console.log(movieId)
 
   const [query, setQuery] = useState(null)
+  const [loader, setLoader] = useState(false)
   const location = useLocation()
   const backLinkLocationRef = useRef(location.state?.form ?? '/movies')
-  // useEffect(() =>{
-  //   requesMovieDetails(movieId)
-  //   // axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
-  //   .then(response => {
-  //     setQuery(response)
-  //     console.log(response);
-  //   })
-  //   .catch(error => {
-  //     console.error('Ошибка:', error);
-  //   });
 
-  // },[movieId])
 
   useEffect(() => {
+    setLoader(true);
     const fetchData = async () => {
       try {
         const response = await requesMovieDetails(movieId);
@@ -33,6 +23,9 @@ import {requesMovieDetails} from '../services/API'
       
       } catch (error) {
         console.error('Ошибка:', error);
+      } finally {
+
+        setLoader(false);
       }
     };
   
@@ -43,7 +36,7 @@ import {requesMovieDetails} from '../services/API'
   return (
     <div>
             <Link to={backLinkLocationRef.current}>Go Back</Link>
-
+            {loader && <Loader/>}
             {query && (
             <div>
                {query.poster_path && (

@@ -1,27 +1,17 @@
-// import axios from 'axios';
 import React, { useEffect, useState  } from 'react'
 import { useParams} from 'react-router-dom'
 import {requesReviews} from '../../services/API'
+import { Loader } from 'components/Loader/Loader';
 
 export const Reviews = () => {
   const {movieId} = useParams()
 
   const [reviews, setReviews] = useState([])
+  const [loader, setLoader] = useState(false)
 
-  // useEffect(() =>{
-  //   // requesReviews(movieId)
-  //   axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page=1&api_key=537b9a5585a30e006c200a33f280f965`)
-  //   .then(response => {
-  //     setReviews(response.data.results)
-  //     console.log(response.data.results);
-  //   })
-  //   .catch(error => {
-  //     console.error('Ошибка:', error);
-  //   });
-
-  // },[movieId])
 
   useEffect(() => {
+    setLoader(true);
     const fetchData = async () => {
       try {
         const response = await requesReviews(movieId);
@@ -29,6 +19,9 @@ export const Reviews = () => {
       
       } catch (error) {
         console.error('Ошибка:', error);
+      } finally {
+
+        setLoader(false);
       }
     };
   
@@ -37,6 +30,7 @@ export const Reviews = () => {
 
   return (
     <div>     
+      {loader && <Loader/>}
             {reviews.length > 0 ? (reviews.map(({author, content, id}) => {
      
               return <li key={id}>
