@@ -31,7 +31,7 @@ import { useSearchParams } from 'react-router-dom';
   //   // onSubmit(query);
   //   setQuery('')
 
-  // }
+  }
 
   return (
        <div>   
