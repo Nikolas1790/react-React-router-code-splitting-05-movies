@@ -37,8 +37,9 @@ useEffect(() => {
     //    return toast.error("Please, enter your query in the search bar :)");
     // }
     const form = e.currentTarget;
-    console.log(form)
-    setSearchParams({film: form.elements.query });
+    console.log(form.elements.query.value)
+    setSearchParams({film: form.elements.query.value });
+    // console.log(form.elements)
     // setSearchParams('')
 
 
@@ -63,6 +64,7 @@ useEffect(() => {
                 // value={query}
                 // onChange={handleChange}
                 value={film} 
+                name={query}
                 onChange={updateQueryString}
               />
 
