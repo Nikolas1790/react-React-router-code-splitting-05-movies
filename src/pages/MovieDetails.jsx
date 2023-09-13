@@ -1,7 +1,7 @@
 // import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import {requesMovieDetails} from '../services/API'
 
@@ -10,7 +10,8 @@ import {requesMovieDetails} from '../services/API'
   // console.log(movieId)
 
   const [query, setQuery] = useState(null)
-  
+  const location = useLocation()
+  const backLinkLocationRef = useRef(location.state?.form ?? '/movies')
   // useEffect(() =>{
   //   requesMovieDetails(movieId)
   //   // axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US&api_key=537b9a5585a30e006c200a33f280f965`)
@@ -37,10 +38,12 @@ import {requesMovieDetails} from '../services/API'
   
     fetchData();
   }, [movieId]);
+ 
 
   return (
     <div>
-            
+            <Link to={backLinkLocationRef.current}>Go Back</Link>
+
             {query && (
             <div>
                {query.poster_path && (
@@ -59,10 +62,7 @@ import {requesMovieDetails} from '../services/API'
                  
       </div>
       )}
-     
-
-
-      
+            
       <h2>Additional information</h2>
       <ul>
         <li>

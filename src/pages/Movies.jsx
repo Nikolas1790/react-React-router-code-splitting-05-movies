@@ -1,29 +1,24 @@
 // import { Axios } from 'axios'
 // import React, { useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { requesSearchMovies} from '../services/API'
 import { useEffect, useState } from 'react';
 // import { toast } from "react-toastify"; 
 // import React, { useEffect } from 'react'
+// import { toast } from "react-toastify"; 
 
- const Movies = () => {
- 
+ const Movies = () => { 
   const [query, setQuery] = useState([])
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   const film = searchParams.get('film')  ?? '';
 
-
-
-
+const location = useLocation()
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await requesSearchMovies(film);
-     
-      setQuery(response.results)
-      
+      const response = await requesSearchMovies(film);     
+      setQuery(response.results)      
     
     } catch (error) {
       console.error('Ошибка:', error);
@@ -42,12 +37,15 @@ useEffect(() => {
     //    return toast.error("Please, enter your query in the search bar :)");
     // }
     const form = e.currentTarget;
-    setSearchParams({film: form.elements.film.value });
-    // form.reset();
+    console.log(form)
+    setSearchParams({film: form.elements.query });
+    // setSearchParams('')
 
+
+
+    // form.reset();    
     // onSubmit(query);
     // setQuery('')
-
   }
 
   const updateQueryString = e => {
@@ -77,7 +75,7 @@ useEffect(() => {
 
          {query?.map(({id, title}) => {
        
-        return <li key={id}> <Link  to={`${id}`}>{title}</Link></li>
+        return <li key={id}> <Link  to={`${id}`} state={{form: location}}>{title}</Link></li>
       })  }
 
 
@@ -94,3 +92,7 @@ export default Movies
 
 
 // onClick={() => setSearchParams({c: 'hello'})}
+
+
+
+
