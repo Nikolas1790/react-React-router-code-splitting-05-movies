@@ -47,7 +47,7 @@ useEffect(() => {
          {loader && <Loader/>}
          {query?.map(({id, title}) => {
        
-        return <li key={id}> <Link  to={`${id}`} state={{form: location}}>{title}</Link></li>
+        return <li key={id}> <Link style={{ textDecoration: 'none' }} to={`${id}`} state={{form: location}}>{title}</Link></li>
       })  }
 
        </MoviesConteiner>

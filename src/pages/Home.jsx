@@ -28,9 +28,6 @@ import { HomeConteiner, HomeTitle } from './Pages.styled';
     fetchData();
   }, []);
 
-  
-    
-
   return (
     <HomeConteiner>     
        <HomeTitle>
@@ -39,7 +36,7 @@ import { HomeConteiner, HomeTitle } from './Pages.styled';
       {loader && <Loader/>}
       {images?.map(({id, title}) => {
         
-        return <li key={id}> <Link  to={`movies/${id}`} state={{form: location}}>{title}</Link></li>
+        return <li key={id}> <Link style={{ textDecoration: 'none' }} to={`movies/${id}`} state={{form: location}}>{title}</Link></li>
       })  }
             
     </HomeConteiner>
