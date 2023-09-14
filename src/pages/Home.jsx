@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import {requestTopMovies} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
-import { HomeConteiner, HomeTitle } from './Pages.styled';
+import { HomeConteiner, HomeTitle, HomeTitleWraper } from './Pages.styled';
 
  const Home = () => {
 
@@ -30,9 +30,9 @@ import { HomeConteiner, HomeTitle } from './Pages.styled';
 
   return (
     <HomeConteiner>     
-       <HomeTitle>
-      <h1>Trending today</h1>
-      </HomeTitle>
+       <HomeTitleWraper>
+      <HomeTitle>Trending today</HomeTitle>
+      </HomeTitleWraper>
       {loader && <Loader/>}
       {images?.map(({id, title}) => {
         

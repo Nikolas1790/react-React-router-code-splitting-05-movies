@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 export const MoviesSearchConteiner = styled.div`
 
 display: flex;
@@ -15,7 +15,7 @@ padding: 20px;
 
 `
 
-export const HomeTitle = styled.div`
+export const HomeTitleWraper = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
@@ -24,6 +24,11 @@ justify-content: center;
 export const HomeConteiner = styled.div`
 padding: 0 20px;
 
+`
+export const HomeTitle = styled.h1`
+font-size:28px;
+  color: #333;
+  margin-bottom: 10px;
 `
 
 export const MoviesDetailsConteiner = styled.div`  
@@ -74,14 +79,49 @@ background-color: rgb(240, 240, 240);;
  border-radius: 4px;
 `
 
-export const MoviesDetailsLinkGoBack = styled(Link)`
-  display: 'inline-block';
-  padding: '10px 20px';
-  background-color: 'blue';
-  color: 'white';
-  text-decoration: 'none';
-  border-radius: '5px';
-  font-size: 16px;
-  cursor: 'pointer'
+// export const MoviesDetailsLinkGoBack = styled(Link)`
+//   display: 'inline-block';
+//   padding: '10px 20px';
+//   background-color: 'blue';
+//   color: 'white';
+//   text-decoration: 'none';
+//   border-radius: '5px';
+//   font-size: 16px;
+//   cursor: 'pointer'
  
+// `
+
+export const MoviesDetWraperContextFilm = styled.div`
+  /* text-align: center; */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ background-color: #f4f4f4;
+`
+
+export const MoviesDetTitle = styled.h2`
+font-size:24px;
+  color: #333;
+  margin-bottom: 10px;
+`
+export const MoviesDetTitleSubsection = styled.h3`
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+`
+
+export const MoviesDetTextOverview = styled.p`
+  font-size: 16px;
+  color: #666;
+`
+
+export const MoviesDetListGenres = styled.h2`
+  font-size: 18px;
+  color: #555;
+`
+
+export const MoviesDetScore = styled.h2`
+  font-size: 18px;
+  color: #555;
 `

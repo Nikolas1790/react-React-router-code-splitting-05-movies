@@ -6,7 +6,7 @@ import {requesMovieDetails} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
 import { Suspense } from 'react'
 import { MoviesList } from 'components/MoviesList/MoviesList'
-import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf } from 'pages/Pages.styled'
+import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf, MoviesDetWraperContextFilm, MoviesDetTitle, MoviesDetScore, MoviesDetTitleSubsection, MoviesDetTextOverview } from 'pages/Pages.styled'
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
@@ -58,18 +58,18 @@ import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, Movie
                       width={250}
                     />
                  )}
-                 <div>
-                  <h2> {query.title}</h2>
-                  <p>Use Score: {Math.round(query.vote_average * 10)}%</p>
-                  <h3>Overview</h3>
-                  <p> {query.overview}</p>
-                  <h3>Genres</h3>
-                <p>{query.genres.map(genre => genre.name).join(', ')}</p>
-                </div>
+                 <MoviesDetWraperContextFilm>
+                  <MoviesDetTitle> {query.title}</MoviesDetTitle>
+                  <MoviesDetScore>Use Score: {Math.round(query.vote_average * 10)}%</MoviesDetScore>
+                  <MoviesDetTitleSubsection>Overview</MoviesDetTitleSubsection>
+                  <MoviesDetTextOverview> {query.overview}</MoviesDetTextOverview>
+                  <MoviesDetTitleSubsection>Genres</MoviesDetTitleSubsection>
+                <MoviesDetTextOverview>{query.genres.map(genre => genre.name).join(', ')}</MoviesDetTextOverview>
+                </MoviesDetWraperContextFilm>
       </MoviesDetailsContext>
       )}
       <MoviesDetailsAdditionalInf>
-          <h2>Additional information</h2>
+          <MoviesDetTitle>Additional information</MoviesDetTitle>
           <MoviesList></MoviesList>
       </MoviesDetailsAdditionalInf>    
       <Suspense fallback={<div>Loading...</div>}>
