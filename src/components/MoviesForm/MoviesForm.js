@@ -41,17 +41,3 @@ export const MoviesForm = ({onChange}) =>{
    </MoviesFormStyled>
     )
 }
-
-{/* <MoviesFormStyled onSubmit={handleSubmit} >
-<MoviesFormInput      
-  type="text"
-  placeholder="Search films"
-  value={movieTitle} 
-  name='query'
-  onChange={updateQueryString}
-/>
-
-<MoviesFormButton type='submit' >
-  <span >Search</span>
-</MoviesFormButton>
-</MoviesFormStyled> */}
