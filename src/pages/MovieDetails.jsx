@@ -38,7 +38,16 @@ import {  MoviesDetailsConteiner, MoviesDetailsContext, MoviesDetailsButton, Mov
 
   return (
     <MoviesDetailsConteiner>
-            <MoviesDetailsButton><Link style={{ textDecoration: 'none', color: 'white' }} to={backLinkLocationRef.current}>Go Back</Link></MoviesDetailsButton>
+            <Link  to={backLinkLocationRef.current} style={{ 
+  display: 'inline-block',
+  padding: '10px 20px',
+  backgroundColor: '#007bff',
+  color: 'white',
+  textDecoration: 'none',
+  borderRadius: '5px',
+  fontSize: '16px',
+  cursor: 'pointer'
+}}>Go Back</Link>
             {loader && <Loader/>}
             {query && (
             <MoviesDetailsContext>

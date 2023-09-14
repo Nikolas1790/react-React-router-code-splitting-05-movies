@@ -10,7 +10,7 @@ export const Header = () => {
   text-decoration: none;
   
   &.active {
-    color: blue;
+    color: #007bff;
   }
 `;
   return (              

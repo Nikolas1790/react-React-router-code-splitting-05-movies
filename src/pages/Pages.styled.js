@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom';
 export const MoviesSearchConteiner = styled.div`
 
 display: flex;
@@ -28,6 +28,7 @@ padding: 0 20px;
 
 export const MoviesDetailsConteiner = styled.div`  
   padding: 8px 16px;  
+  
   
 `
 
@@ -59,14 +60,28 @@ export const MoviesDetailsContext = styled.div`
  gap:8px;
  margin-top: 8px;
  margin-bottom: 16px;
- border-bottom: 1px solid #000;
+ border-bottom: 1px solid gray;
  padding: 8px;
- box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+ box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+ border-radius: 4px;
 `
 export const MoviesDetailsAdditionalInf = styled.div`
-background-color: rgb(140, 170, 214);
- border-bottom: 1px solid #000;
+background-color: rgb(240, 240, 240);;
+ border-bottom: 1px solid gray;
  padding: 8px;
- box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+ box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
  margin-bottom: 20px;
+ border-radius: 4px;
+`
+
+export const MoviesDetailsLinkGoBack = styled(Link)`
+  display: 'inline-block';
+  padding: '10px 20px';
+  background-color: 'blue';
+  color: 'white';
+  text-decoration: 'none';
+  border-radius: '5px';
+  font-size: 16px;
+  cursor: 'pointer'
+ 
 `
