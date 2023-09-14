@@ -1,31 +1,33 @@
 import { useState } from "react"
+import { toast } from "react-toastify"; 
+import { MoviesFormButton, MoviesFormInput, MoviesFormStyled } from "./MoviesForm.styled";
 
-export const MoviesForm = () =>{
+export const MoviesForm = ({onChange}) =>{
     const [movieTitle, setMovieTitle] = useState('')
-
+   
     const handleSubmit = (e) =>{
-        e.preventDefault()   
-        const form = e.currentTarget;
-        if(!form.elements.query.value.trim()){
+            e.preventDefault() 
+        if(!movieTitle.trim()){
           toast.error("Please, enter your query in the search bar :)");
           return alert("Please, enter your query in the search bar :)");
         }
-        // setSearchParams({film: form.elements.query.value.trim() });
-        setMovieTitle(form.elements.query.value.trim() )
+       
+        onChange(movieTitle)
         setMovieTitle('')
-        //   setSearchParams('')
+        
         }
 
         const updateQueryString = e => {
             if(e.target.value === ''){
               return setMovieTitle({})
             }
-            setMovieTitle({film: e.target.value })  
+            setMovieTitle( e.target.value )  
         
           }
     return(
-        <form onSubmit={handleSubmit} >
-        <input      
+     
+        <MoviesFormStyled onSubmit={handleSubmit} >
+        <MoviesFormInput      
           type="text"
           placeholder="Search films"
           value={movieTitle} 
@@ -33,9 +35,23 @@ export const MoviesForm = () =>{
           onChange={updateQueryString}
         />
 
-        <button type='submit' >
+        <MoviesFormButton type='submit' >
           <span >Search</span>
-        </button>
-   </form>
+        </MoviesFormButton>
+   </MoviesFormStyled>
     )
 }
+
+{/* <MoviesFormStyled onSubmit={handleSubmit} >
+<MoviesFormInput      
+  type="text"
+  placeholder="Search films"
+  value={movieTitle} 
+  name='query'
+  onChange={updateQueryString}
+/>
+
+<MoviesFormButton type='submit' >
+  <span >Search</span>
+</MoviesFormButton>
+</MoviesFormStyled> */}

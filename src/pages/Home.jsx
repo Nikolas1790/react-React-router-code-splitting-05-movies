@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {requestTopMovies} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
+import { HomeConteiner, HomeTitle } from './Pages.styled';
 
  const Home = () => {
 
   const [images, setImages] = useState(null)
   const [loader, setLoader] = useState(false)
-
+  const location = useLocation()
 
   useEffect(() => {
     setLoader(true);
@@ -31,15 +32,17 @@ import { Loader } from 'components/Loader/Loader';
     
 
   return (
-    <div>      
+    <HomeConteiner>     
+       <HomeTitle>
       <h1>Trending today</h1>
+      </HomeTitle>
       {loader && <Loader/>}
       {images?.map(({id, title}) => {
         
-        return <li key={id}> <Link  to={`movies/${id}`}>{title}</Link></li>
+        return <li key={id}> <Link  to={`movies/${id}`} state={{form: location}}>{title}</Link></li>
       })  }
             
-    </div>
+    </HomeConteiner>
         
   )
 }

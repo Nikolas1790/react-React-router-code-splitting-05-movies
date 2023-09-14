@@ -2,11 +2,11 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { requesSearchMovies} from '../services/API'
 import { useEffect, useState } from 'react';
 import { Loader } from 'components/Loader/Loader';
-import { toast } from "react-toastify"; 
+import { MoviesForm } from 'components/MoviesForm/MoviesForm';
+import { MoviesConteiner, MoviesSearchConteiner } from './Pages.styled';
 
  const Movies = () => { 
   const [query, setQuery] = useState([])
-  const [movieTitle, setMovieTitle] = useState('')
   const [searchParams, setSearchParams] = useSearchParams();
   const [loader, setLoader] = useState(false)
 
@@ -19,7 +19,7 @@ useEffect(() => {
   setLoader(true);
   const fetchData = async () => {
     try {
-      const response = await requesSearchMovies(movieTitle);     
+      const response = await requesSearchMovies(film);     
       setQuery(response.results)      
     
     } catch (error) {
@@ -30,56 +30,27 @@ useEffect(() => {
     }
   };
   fetchData();
-}, [movieTitle]);
+}, [film]);
 
-
-const handleSubmit = (e) =>{
-  e.preventDefault()   
-  const form = e.currentTarget;
-  if(!form.elements.query.value.trim()){
-    toast.error("Please, enter your query in the search bar :)");
-    return alert("Please, enter your query in the search bar :)");
-  }
-
-  setSearchParams({film: form.elements.query.value.trim() });
-setMovieTitle(form.elements.query.value.trim() )
-
-  setSearchParams('')
-}
-
-  const updateQueryString = e => {
-    if(e.target.value === ''){
+  const updateQueryString = (film) => {
+    if(film === ''){
       return setSearchParams({})
     }
-    setSearchParams({film: e.target.value })  
-
+       setSearchParams({film: film }) 
   }
 
   return (
-       <div>   
-         <form onSubmit={handleSubmit} >
-              <input      
-                type="text"
-                placeholder="Search films"
-                value={film} 
-                name='query'
-                onChange={updateQueryString}
-              />
-
-              <button type='submit' >
-                <span >Search</span>
-              </button>
-         </form>
-
+       <MoviesConteiner>   
+        <MoviesSearchConteiner>
+        <MoviesForm onChange={updateQueryString}></MoviesForm>
+        </MoviesSearchConteiner>
          {loader && <Loader/>}
-
          {query?.map(({id, title}) => {
        
         return <li key={id}> <Link  to={`${id}`} state={{form: location}}>{title}</Link></li>
       })  }
 
-
-       </div>
+       </MoviesConteiner>
   )
 }
 
