@@ -6,7 +6,7 @@ padding: 10px 30px;
 /* max-width: 1200px; */
 border-bottom: 1px solid #000;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-background:  rgb(217, 217, 217)
+/* background:  rgb(217, 217, 217) */
 
 `
 

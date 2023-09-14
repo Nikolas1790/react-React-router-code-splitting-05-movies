@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 export const MoviesList = () =>{
 
     return(
-      <ul>
+      <ol>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link style={{ textDecoration: 'none' }} to="cast">Cast</Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link style={{ textDecoration: 'none' }} to="reviews">Reviews</Link>
         </li>        
-      </ul> 
+      </ol> 
     )
 }

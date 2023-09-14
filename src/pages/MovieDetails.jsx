@@ -6,6 +6,7 @@ import {requesMovieDetails} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
 import { Suspense } from 'react'
 import { MoviesList } from 'components/MoviesList/MoviesList'
+import {  MoviesDetailsConteiner, MoviesDetailsContext, MoviesDetailsButton, MoviesDetailsImg, MoviesDetailsAdditionalInf } from 'pages/Pages.styled'
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
@@ -36,35 +37,36 @@ import { MoviesList } from 'components/MoviesList/MoviesList'
  
 
   return (
-    <div>
-            <button><Link to={backLinkLocationRef.current}>Go Back</Link></button>
+    <MoviesDetailsConteiner>
+            <MoviesDetailsButton><Link style={{ textDecoration: 'none', color: 'white' }} to={backLinkLocationRef.current}>Go Back</Link></MoviesDetailsButton>
             {loader && <Loader/>}
             {query && (
-            <div>
+            <MoviesDetailsContext>
                {query.poster_path && (
-                    <img
+                    <MoviesDetailsImg
                       src={`https://image.tmdb.org/t/p/w500${query.poster_path}`}
                       alt={query.title}
                       width={250}
                     />
                  )}
+                 <div>
                   <h2> {query.title}</h2>
                   <p>Use Score: {Math.round(query.vote_average * 10)}%</p>
                   <h3>Overview</h3>
                   <p> {query.overview}</p>
                   <h3>Genres</h3>
                 <p>{query.genres.map(genre => genre.name).join(', ')}</p>
-                 
-      </div>
+                </div>
+      </MoviesDetailsContext>
       )}
-
-      <h2>Additional information</h2>
-      <MoviesList></MoviesList>
-       
+      <MoviesDetailsAdditionalInf>
+          <h2>Additional information</h2>
+          <MoviesList></MoviesList>
+      </MoviesDetailsAdditionalInf>    
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
-      </div>
+      </MoviesDetailsConteiner>
   )
 }
 

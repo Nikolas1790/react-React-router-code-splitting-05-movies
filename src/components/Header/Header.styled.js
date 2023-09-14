@@ -7,5 +7,6 @@ align-items: center;
 justify-content: center;
 gap:30px;
 list-style: none;
-
+font-weight: 700;
+font-size: 20px;
 `
