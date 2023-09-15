@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link, useLocation } from 'react-router-dom'
+import {  useLocation } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import {requesMovieDetails} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
 import { Suspense } from 'react'
 import { MoviesList } from 'components/MoviesList/MoviesList'
-import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf, MoviesDetWraperContextFilm, MoviesDetTitle, MoviesDetScore, MoviesDetTitleSubsection, MoviesDetTextOverview } from 'pages/Pages.styled'
+import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf, MoviesDetWraperContextFilm, MoviesDetTitle, MoviesDetScore, MoviesDetTitleSubsection, MoviesDetTextOverview, StyledLink, MoviesDetailsLinkGoBack } from 'pages/Pages.styled'
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
@@ -38,16 +38,7 @@ import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, Movie
 
   return (
     <MoviesDetailsConteiner>
-            <Link  to={backLinkLocationRef.current} style={{ 
-  display: 'inline-block',
-  padding: '10px 20px',
-  backgroundColor: '#007bff',
-  color: 'white',
-  textDecoration: 'none',
-  borderRadius: '5px',
-  fontSize: '16px',
-  cursor: 'pointer'
-}}>Go Back</Link>
+            <MoviesDetailsLinkGoBack  to={backLinkLocationRef.current} >Go Back</MoviesDetailsLinkGoBack>
             {loader && <Loader/>}
             {query && (
             <MoviesDetailsContext>

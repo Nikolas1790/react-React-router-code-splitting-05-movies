@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
+import { MoviesListLink } from './MoviesList.style'
 
 export const MoviesList = () =>{
 
     return(
       <ol>
         <li>
-          <Link style={{ textDecoration: 'none' }} to="cast">Cast</Link>
+          <MoviesListLink  to="cast">Cast</MoviesListLink>
         </li>
         <li>
-          <Link style={{ textDecoration: 'none' }} to="reviews">Reviews</Link>
+          <MoviesListLink  to="reviews">Reviews</MoviesListLink>
         </li>        
       </ol> 
     )

@@ -3,7 +3,7 @@ import { requesSearchMovies} from '../services/API'
 import { useEffect, useState } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import { MoviesForm } from 'components/MoviesForm/MoviesForm';
-import { MoviesConteiner, MoviesSearchConteiner } from './Pages.styled';
+import { MoviesConteiner, MoviesSearchConteiner, TextDecorationLink } from './Pages.styled';
 
  const Movies = () => { 
   const [query, setQuery] = useState([])
@@ -47,7 +47,7 @@ useEffect(() => {
          {loader && <Loader/>}
          {query?.map(({id, title}) => {
        
-        return <li key={id}> <Link style={{ textDecoration: 'none' }} to={`${id}`} state={{form: location}}>{title}</Link></li>
+        return <li key={id}> <TextDecorationLink style={{ textDecoration: 'none' }} to={`${id}`} state={{form: location}}>{title}</TextDecorationLink></li>
       })  }
 
        </MoviesConteiner>

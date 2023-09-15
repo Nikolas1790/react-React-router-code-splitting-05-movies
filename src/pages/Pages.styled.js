@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export const MoviesSearchConteiner = styled.div`
 
 display: flex;
@@ -79,21 +79,10 @@ background-color: rgb(240, 240, 240);;
  border-radius: 4px;
 `
 
-// export const MoviesDetailsLinkGoBack = styled(Link)`
-//   display: 'inline-block';
-//   padding: '10px 20px';
-//   background-color: 'blue';
-//   color: 'white';
-//   text-decoration: 'none';
-//   border-radius: '5px';
-//   font-size: 16px;
-//   cursor: 'pointer'
- 
-// `
+
 
 export const MoviesDetWraperContextFilm = styled.div`
-  /* text-align: center; */
-  padding: 20px;
+   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  background-color: #f4f4f4;
@@ -124,4 +113,40 @@ export const MoviesDetListGenres = styled.h2`
 export const MoviesDetScore = styled.h2`
   font-size: 18px;
   color: #555;
+`
+export const MoviesDetailsLinkGoBack = styled(Link)`
+
+display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: 'pointer';
+
+  
+
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+
+    transition: background-color 250ms linear, box-shadow 250ms linear ;
+    &:hover {
+    background-color: blue;
+    
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    }
+`;
+
+
+export const TextDecorationLink = styled(Link)`
+text-decoration: none; 
+color: gray;     
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 250ms linear ;    
+    &:hover {
+        color: black;         
+    }
+
 `
