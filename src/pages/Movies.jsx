@@ -1,4 +1,4 @@
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import {  useLocation, useSearchParams } from 'react-router-dom';
 import { requesSearchMovies} from '../services/API'
 import { useEffect, useState } from 'react';
 import { Loader } from 'components/Loader/Loader';

@@ -6,7 +6,7 @@ import {requesMovieDetails} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
 import { Suspense } from 'react'
 import { MoviesList } from 'components/MoviesList/MoviesList'
-import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf, MoviesDetWraperContextFilm, MoviesDetTitle, MoviesDetScore, MoviesDetTitleSubsection, MoviesDetTextOverview, StyledLink, MoviesDetailsLinkGoBack } from 'pages/Pages.styled'
+import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, MoviesDetailsAdditionalInf, MoviesDetWraperContextFilm, MoviesDetTitle, MoviesDetScore, MoviesDetTitleSubsection, MoviesDetTextOverview,  MoviesDetailsLinkGoBack } from 'pages/Pages.styled'
 
  const MovieDetails = () => {
   const {movieId} = useParams()   
