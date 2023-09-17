@@ -9,7 +9,6 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([])
   const [loader, setLoader] = useState(false)
 
-
   useEffect(() => {
     setLoader(true);
     const fetchData = async () => {
@@ -18,7 +17,7 @@ const Reviews = () => {
         setReviews(response.results);
       
       } catch (error) {
-        console.error('Ошибка:', error);
+        console.error('Error:', error);
       } finally {
 
         setLoader(false);
@@ -37,7 +36,7 @@ const Reviews = () => {
                  <ReviewsHeader>Autor: {author}</ReviewsHeader>
                  <ReviewsContext>{content}</ReviewsContext>
                </ReviewsStyled>
-            })) : (<p>We don't have any reviews for this movie. </p>)}
+              })) : (<p>We don't have any reviews for this movie. </p>)}
      
     </div>
   )

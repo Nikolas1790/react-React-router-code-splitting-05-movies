@@ -23,7 +23,7 @@ useEffect(() => {
       setQuery(response.results)      
     
     } catch (error) {
-      console.error('Ошибка:', error);
+      console.error('Error:', error);
     } finally {
 
       setLoader(false);
@@ -42,11 +42,11 @@ useEffect(() => {
   return (
        <MoviesConteiner>   
         <MoviesSearchConteiner>
-        <MoviesForm onChange={updateQueryString}></MoviesForm>
+            <MoviesForm onChange={updateQueryString}></MoviesForm>
         </MoviesSearchConteiner>
+
          {loader && <Loader/>}
-         {query?.map(({id, title}) => {
-       
+         {query?.map(({id, title}) => {       
         return <li key={id}> <TextDecorationLink style={{ textDecoration: 'none' }} to={`${id}`} state={{form: location}}>{title}</TextDecorationLink></li>
       })  }
 

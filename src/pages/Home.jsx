@@ -18,7 +18,7 @@ import { HomeConteiner, HomeTitle, HomeTitleWraper, TextDecorationLink } from '.
         setImages(response.results);
       
       } catch (error) {
-        console.error('Ошибка:', error);
+        console.error('Error:', error);
       } finally {
 
         setLoader(false);
@@ -30,7 +30,7 @@ import { HomeConteiner, HomeTitle, HomeTitleWraper, TextDecorationLink } from '.
 
   return (
     <HomeConteiner>     
-       <HomeTitleWraper>
+      <HomeTitleWraper>
             <HomeTitle>Trending today</HomeTitle>
       </HomeTitleWraper>
       {loader && <Loader/>}

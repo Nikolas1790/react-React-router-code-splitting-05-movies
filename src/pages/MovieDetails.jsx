@@ -25,7 +25,7 @@ import {  MoviesDetailsConteiner, MoviesDetailsContext,  MoviesDetailsImg, Movie
         setQuery(response);
       
       } catch (error) {
-        console.error('Ошибка:', error);
+        console.error('Error:', error);
       } finally {
 
         setLoader(false);
