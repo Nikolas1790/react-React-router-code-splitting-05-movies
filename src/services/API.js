@@ -14,6 +14,7 @@ export async function requestTopMovies() {
     const { data } = await axios.get(
       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
     );
+    console.log(data)
      return data;
   }
 
