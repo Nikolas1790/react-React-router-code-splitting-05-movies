@@ -14,8 +14,7 @@ export async function requestTopMovies() {
     const { data } = await axios.get(
       `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
     );
-    console.log(data)
-     return data;
+    return data;
   }
 
 
@@ -23,19 +22,19 @@ export async function requestTopMovies() {
     const { data } = await axios.get(
       `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
     );
-     return data;
+    return data;
   }
 
   export async function requesReviews(movieId) {
     const { data } = await axios.get(
       `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
     );  
-     return data;
+    return data;
   }
 
   export async function requesSearchMovies(film) {
     const { data } = await axios.get(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1&query=${film}`,
     );
-     return data;
+    return data;
   }

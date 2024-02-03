@@ -1,7 +1,6 @@
 import { MoviesListLink } from './MoviesList.style'
 
 export const MoviesList = () =>{
-
     return(
       <ol>
         <li>

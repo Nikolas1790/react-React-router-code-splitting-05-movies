@@ -4,8 +4,7 @@ import {requestTopMovies} from '../services/API'
 import { Loader } from 'components/Loader/Loader';
 import { HomeConteiner, HomeTitle, HomeTitleWraper, TextDecorationLink } from './Pages.styled';
 
- const Home = () => {
-
+const Home = () => {
   const [images, setImages] = useState(null)
   const [loader, setLoader] = useState(false)
   const location = useLocation()
@@ -31,7 +30,7 @@ import { HomeConteiner, HomeTitle, HomeTitleWraper, TextDecorationLink } from '.
   return (
     <HomeConteiner>     
       <HomeTitleWraper>
-            <HomeTitle>Trending today</HomeTitle>
+        <HomeTitle>Trending today</HomeTitle>
       </HomeTitleWraper>
       {loader && <Loader/>}
       {images?.map(({id, title}) => {
@@ -41,6 +40,5 @@ import { HomeConteiner, HomeTitle, HomeTitleWraper, TextDecorationLink } from '.
     </HomeConteiner>        
   )
 }
-
 
 export default Home

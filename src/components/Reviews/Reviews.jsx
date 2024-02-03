@@ -30,13 +30,13 @@ const Reviews = () => {
   return (
     <div>     
       {loader && <Loader/>}
-            {reviews.length > 0 ? (reviews.map(({author, content, id}) => {
+      {reviews.length > 0 ? (reviews.map(({author, content, id}) => {
      
-              return <ReviewsStyled key={id}>
-                 <ReviewsHeader>Autor: {author}</ReviewsHeader>
-                 <ReviewsContext>{content}</ReviewsContext>
-               </ReviewsStyled>
-              })) : (<p>We don't have any reviews for this movie. </p>)}
+        return <ReviewsStyled key={id}>
+           <ReviewsHeader>Autor: {author}</ReviewsHeader>
+           <ReviewsContext>{content}</ReviewsContext>
+          </ReviewsStyled>
+      })) : (<p>We don't have any reviews for this movie. </p>)}
      
     </div>
   )

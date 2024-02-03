@@ -10,10 +10,9 @@ export const ReviewsStyled = styled.li`
 
 `
 export const ReviewsHeader = styled.h3`
- font-size: 18px; 
+  font-size: 18px; 
   margin: 0 0 5px; 
 `
-
 export const ReviewsContext = styled.p`
   font-size: 14px; 
   margin: 0;

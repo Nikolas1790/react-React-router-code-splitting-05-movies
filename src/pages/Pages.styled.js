@@ -7,36 +7,26 @@ align-items: center;
 justify-content: center;
 list-style: none;
 margin-bottom: 40px;
-
 `
 export const MoviesConteiner = styled.div`
 padding: 20px;
-
-
 `
-
 export const HomeTitleWraper = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
 `
-
 export const HomeConteiner = styled.div`
 padding: 0 20px;
-
 `
 export const HomeTitle = styled.h1`
-font-size:28px;
+  font-size:28px;
   color: #333;
   margin-bottom: 10px;
 `
-
 export const MoviesDetailsConteiner = styled.div`  
-  padding: 8px 16px;  
-  
-  
+  padding: 8px 16px; 
 `
-
 export const MoviesDetailsButton = styled.button`
   background-color: #007bff;  
   color: #fff;
@@ -59,7 +49,6 @@ export const MoviesDetailsImg = styled.img`
 border-radius:8px;
 box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 `
-
 export const MoviesDetailsContext = styled.div`
  display: flex;
  gap:8px;
@@ -78,16 +67,12 @@ background-color: rgb(240, 240, 240);;
  margin-bottom: 20px;
  border-radius: 4px;
 `
-
-
-
 export const MoviesDetWraperContextFilm = styled.div`
    padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  background-color: #f4f4f4;
 `
-
 export const MoviesDetTitle = styled.h2`
 font-size:24px;
   color: #333;
@@ -99,17 +84,14 @@ export const MoviesDetTitleSubsection = styled.h3`
   margin-top: 20px;
   margin-bottom: 10px;
 `
-
 export const MoviesDetTextOverview = styled.p`
   font-size: 16px;
   color: #666;
 `
-
 export const MoviesDetListGenres = styled.h2`
   font-size: 18px;
   color: #555;
 `
-
 export const MoviesDetScore = styled.h2`
   font-size: 18px;
   color: #555;
@@ -123,9 +105,7 @@ display: inline-block;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
-  cursor: 'pointer';
-
-  
+  cursor: 'pointer'; 
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -138,7 +118,6 @@ display: inline-block;
     }
 `;
 
-
 export const TextDecorationLink = styled(Link)`
 text-decoration: none; 
 color: gray;     
@@ -148,5 +127,4 @@ color: gray;
     &:hover {
         color: black;         
     }
-
 `

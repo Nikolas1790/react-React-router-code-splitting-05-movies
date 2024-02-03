@@ -9,20 +9,16 @@ export const CastStyled = styled.li`
   background-color: #f0f0f0; 
   border: 1px solid #ccc; 
   border-radius: 4px; 
-
 `
 export const CastStyledImg = styled.img`
   max-width: 100px; 
   height: auto; 
   margin-right: 10px;
-
 `
 export const CastStyledName = styled.p`
 font-weight: bold;
 margin: 8px;
-
 `
 export const CastStyledChatacter = styled.p`
 font-style: italic;
-
 `
