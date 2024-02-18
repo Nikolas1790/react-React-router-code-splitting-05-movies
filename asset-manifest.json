@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-React-router-code-splitting-05-movies/static/css/main.baae1159.css",
-    "main.js": "/react-React-router-code-splitting-05-movies/static/js/main.7b189454.js",
+    "main.js": "/react-React-router-code-splitting-05-movies/static/js/main.1f821c70.js",
     "static/js/415.c13e1edf.chunk.js": "/react-React-router-code-splitting-05-movies/static/js/415.c13e1edf.chunk.js",
     "static/js/999.7e458691.chunk.js": "/react-React-router-code-splitting-05-movies/static/js/999.7e458691.chunk.js",
     "static/js/133.8366e318.chunk.js": "/react-React-router-code-splitting-05-movies/static/js/133.8366e318.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/927.e4211e4c.chunk.js": "/react-React-router-code-splitting-05-movies/static/js/927.e4211e4c.chunk.js",
     "index.html": "/react-React-router-code-splitting-05-movies/index.html",
     "main.baae1159.css.map": "/react-React-router-code-splitting-05-movies/static/css/main.baae1159.css.map",
-    "main.7b189454.js.map": "/react-React-router-code-splitting-05-movies/static/js/main.7b189454.js.map",
+    "main.1f821c70.js.map": "/react-React-router-code-splitting-05-movies/static/js/main.1f821c70.js.map",
     "415.c13e1edf.chunk.js.map": "/react-React-router-code-splitting-05-movies/static/js/415.c13e1edf.chunk.js.map",
     "999.7e458691.chunk.js.map": "/react-React-router-code-splitting-05-movies/static/js/999.7e458691.chunk.js.map",
     "133.8366e318.chunk.js.map": "/react-React-router-code-splitting-05-movies/static/js/133.8366e318.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.baae1159.css",
-    "static/js/main.7b189454.js"
+    "static/js/main.1f821c70.js"
   ]
 }
